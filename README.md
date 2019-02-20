@@ -32,5 +32,6 @@
 ## Bonus
 - Create an input field that allows you to query for different topics. Hmmm, I wonder how many articles there are about bananas????
 - A button that filters out articles by news source.  
+- Create a navbar component and implement React Router to route to your Components.
 - Use [Moment](https://momentjs.com/) to format the `publishedAt` date. Hmmm, what format is it in right now?  
 - Use a component library to style your app! [React Bootstrap](https://react-bootstrap.github.io/) or [Ant-Design](https://ant.design/) (These are just examples, there are many others).  
