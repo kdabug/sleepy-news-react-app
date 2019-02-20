@@ -5,7 +5,7 @@
 
 ## Getting Started:
 - Fork and Clone this repo then `cd` into the repo name.
-- run `create-react-app news-app` and `cd` into the `news-app`.
+- Run `create-react-app news-app` and `cd` into the `news-app`.
 - Install axios.
 - Run `npm start`.
 - Remove or delete the pre-loaded `create-react-app` stuff that comes with it (`logo.svg, app.test.js, serviceWorker`, the code in `App.css`). _This step is mandatory_.
@@ -16,7 +16,6 @@
 - Put the `.env` file and your `node_modules` (this might already be there) in a `.gitignore` file.
 - Once you can see your data, create **4 components** to use for your app.
     - What else in the data can you use as a component? 
-- Which should state ?
 - Styling is **required** for this assignment. You may style your App in `App.css`
 
 
