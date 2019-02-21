@@ -20,7 +20,7 @@ class App extends Component {
     e.preventDefault();
     console.log(this.state);
     await fetchAllArticles(this.state.formQuery);
-    this.fetchNews();
+    await this.fetchNews();
   }
 
   handleChange(e) {
@@ -46,12 +46,12 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Hello react news App</h1>
-        {/* <Form
+        <Form
           formQuery={this.state.formQuery}
           onChange={this.handleChange}
           onSubmit={this.handleSubmit}
         />
-        <ArticleList /> */}
+        <ArticleList articleData={this.state.articleData} />
       </div>
     );
   }

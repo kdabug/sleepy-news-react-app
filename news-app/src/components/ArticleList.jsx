@@ -2,11 +2,12 @@ import React from "react";
 import DisplayArticle from "./DisplayArticle";
 
 const ArticleList = props => {
+  const { articleData } = props;
   return (
     <div className="article-list">
       <h1>This is the ArticleList Component</h1>
-      {props.kittenData.map(gifData => (
-        <DisplayArticle key={gifData.id} gifData={gifData} />
+      {articleData.map((el, index) => (
+        <DisplayArticle key={index} articleData={el} />
       ))}
     </div>
   );

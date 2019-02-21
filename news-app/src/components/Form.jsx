@@ -13,7 +13,7 @@ class Form extends Component {
             value={this.props.formQuery}
             onChange={this.props.onChange}
           />
-          <input type="submit" value="Submit" onClick={this.props.onSubmit} />
+          <input type="submit" onClick={this.props.onSubmit} />
         </form>
       </div>
     );
