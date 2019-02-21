@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const TOKEN = "fa7a7b997aaa4680b5bcb8ec549a6c56";
-const BASE_URL = "https://newsapi.org/v2/everything?apiKey=";
+const TOKEN = process.env.REACT_APP_TOKEN;
+const BASE_URL = "https://newsapi.org/v2/everything?";
 const api = axios.create({
   baseURL: BASE_URL,
   headers: {
@@ -9,9 +9,10 @@ const api = axios.create({
   }
 });
 
-const fetchArticles = async topic => {
-  const resp = await api(`&q=${topic}`);
-  return resp.data;
+const fetchAllArticles = async topic => {
+  const resp = await axios(`${BASE_URL}q=${topic}&apiKey=${TOKEN}`);
+  console.log(resp);
+  return resp.data.articles;
 };
 
-export default fetchArticles;
+export default fetchAllArticles;

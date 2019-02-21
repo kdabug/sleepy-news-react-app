@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import "./App.css";
 import ArticleList from "./components/ArticleList";
 import Form from "./components/Form";
-import fetchArticles from "./service/news";
+import fetchAllArticles from "./service/news";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       articleData: [],
-      formQuery: ""
+      formQuery: "puppies"
     };
     this.fetchNews = this.fetchNews.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -19,7 +19,7 @@ class App extends Component {
   async handleSubmit(e) {
     e.preventDefault();
     console.log(this.state);
-    await fetchArticles(formQuery);
+    await fetchAllArticles(this.state.formQuery);
     this.fetchNews();
   }
 
@@ -31,7 +31,7 @@ class App extends Component {
   }
 
   async fetchNews() {
-    const articleData = await fetchArticles(this.state.formQuery);
+    const articleData = await fetchAllArticles(this.state.formQuery);
     console.log(articleData);
     this.setState({
       articleData: articleData,
@@ -46,12 +46,12 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Hello react news App</h1>
-        <Form
+        {/* <Form
           formQuery={this.state.formQuery}
           onChange={this.handleChange}
           onSubmit={this.handleSubmit}
         />
-        <ArticleList />
+        <ArticleList /> */}
       </div>
     );
   }
