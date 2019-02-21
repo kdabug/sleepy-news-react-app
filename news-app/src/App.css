@@ -1,0 +1,43 @@
+body {
+  font-family: "Rajdhani", sans-serif;
+  background-color: coral;
+}
+
+.header {
+  text-align: center;
+  font-size: 40px;
+  background-color: lightgrey;
+}
+
+.form {
+  text-align: center;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-color: grey;
+  padding: 20px;
+}
+.article {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  padding: 10px;
+  height: auto;
+  background-color: grey;
+}
+
+.body-article {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  background-color: lightgrey;
+}
+
+.article-text {
+  background-color: grey;
+}
+
+.article-image {
+  width: 100%;
+  height: auto;
+}

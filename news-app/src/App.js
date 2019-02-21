@@ -3,13 +3,15 @@ import "./App.css";
 import ArticleList from "./components/ArticleList";
 import Form from "./components/Form";
 import fetchAllArticles from "./service/news";
+import Header from "./components/Header";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       articleData: [],
-      formQuery: "puppies"
+      formQuery: "sleepy",
+      lastQuery: "sleepy"
     };
     this.fetchNews = this.fetchNews.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -19,6 +21,9 @@ class App extends Component {
   async handleSubmit(e) {
     e.preventDefault();
     console.log(this.state);
+    this.setState({
+      lastQuery: this.state.formQuery
+    });
     await fetchAllArticles(this.state.formQuery);
     await this.fetchNews();
   }
@@ -45,7 +50,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Hello react news App</h1>
+        <Header lastQuery={this.state.lastQuery} />
         <Form
           formQuery={this.state.formQuery}
           onChange={this.handleChange}

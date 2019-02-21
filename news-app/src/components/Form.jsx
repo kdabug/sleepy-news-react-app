@@ -4,8 +4,8 @@ class Form extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.props.onSubmit}>
-          <label htmlFor="formQuery">Search By Topic:</label>
+        <form className="form">
+          <label htmlFor="formQuery">Search All the New Newzzz By Topic:</label>
           <input
             type="text"
             name="formQuery"

@@ -5,7 +5,6 @@ const ArticleList = props => {
   const { articleData } = props;
   return (
     <div className="article-list">
-      <h1>This is the ArticleList Component</h1>
       {articleData.map((el, index) => (
         <DisplayArticle key={index} articleData={el} />
       ))}
