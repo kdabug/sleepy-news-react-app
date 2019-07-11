@@ -1,21 +1,27 @@
 body {
   font-family: "Rajdhani", sans-serif;
-  background-color: coral;
+  background-color: #db97ac;
+  height: 100vh;
+  width: 100vw;
 }
 
 .header {
   text-align: center;
   font-size: 40px;
-  background-color: lightgrey;
+  background-color: #b8637d;
 }
 
 .form {
   text-align: center;
-  display: flex;
+  display: block;
   align-content: center;
   justify-content: center;
-  background-color: grey;
+  background-color: #b8637d;
   padding: 20px;
+  width: 100%;
+  color: #3b0012;
+  font-size: 20px;
+  font-weight: bold;
 }
 .article {
   display: flex;
@@ -23,21 +29,57 @@ body {
   width: 100vw;
   padding: 10px;
   height: auto;
-  background-color: grey;
+  background-color: #963855;
+  margin: 20px 0px 20px 0px;
+  text-align: center;
+}
+
+.article h1 {
+  color: #ecc1ce;
+}
+
+.all-articles {
+  display: flex;
+  flex-direction: column;
+}
+
+.articles-list {
+  display: flex;
+  flex-direction: column;
 }
 
 .body-article {
-  display: flex;
-  flex-direction: column;
+  width: 30%;
+  display: grid;
+  grid-template-columns: 40% 60%;
   width: 100vw;
-  background-color: lightgrey;
 }
 
 .article-text {
-  background-color: grey;
+  background-color: #3b0012;
+  padding: 10px;
+  margin: 10px;
+  text-align: left;
+  color: #f6e3e9;
+}
+
+.article-text a {
+  color: #ecc1ce;
+}
+.article-text p {
+  font-size: 20px;
 }
 
 .article-image {
-  width: 100%;
+  width: 95%;
   height: auto;
+  margin: auto;
+  border-radius: 10%;
+}
+
+@media all and (max-width: 560px) {
+  .body-article {
+    display: flex;
+    flex-direction: column;
+  }
 }

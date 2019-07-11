@@ -5,7 +5,9 @@ class Form extends Component {
     return (
       <div>
         <form className="form">
-          <label htmlFor="formQuery">Search All the New Newzzz By Topic:</label>
+          <label htmlFor="formQuery">
+            search all the new Newzzz by topic:{" "}
+          </label>
           <input
             type="text"
             name="formQuery"

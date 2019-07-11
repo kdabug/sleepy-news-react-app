@@ -56,7 +56,9 @@ class App extends Component {
           onChange={this.handleChange}
           onSubmit={this.handleSubmit}
         />
-        <ArticleList articleData={this.state.articleData} />
+        <div className="all-articles">
+          <ArticleList articleData={this.state.articleData} />
+        </div>
       </div>
     );
   }
