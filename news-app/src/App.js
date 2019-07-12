@@ -1,19 +1,22 @@
 import React, { Component } from "react";
 import "./App.css";
-import ArticleList from "./components/ArticleList";
-import Form from "./components/Form";
-import fetchAllArticles from "./service/news";
-import Header from "./components/Header";
+import Welcome from "./components/Welcome";
+import TopNewsArticles from "./components/TopNewsArticles";
+import EverythingArticles from "./components/EverythingArticles";
+import { fetchTopicsArticles, fetchTopUSArticles } from "./service/news";
+import { Route, Link } from "react-router-dom";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      articleData: [],
+      usLiveArticleData: [],
+      topicArticleData: [],
       formQuery: "sleepy",
       lastQuery: "sleepy"
     };
-    this.fetchNews = this.fetchNews.bind(this);
+    this.fetchTopLiveNews = this.fetchTopLiveNews.bind(this);
+    this.fetchTopicsNews = this.fetchTopicsNews.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -24,8 +27,7 @@ class App extends Component {
     this.setState({
       lastQuery: this.state.formQuery
     });
-    await fetchAllArticles(this.state.formQuery);
-    await this.fetchNews();
+    await this.fetchTopicsNews();
   }
 
   handleChange(e) {
@@ -35,30 +37,63 @@ class App extends Component {
     });
   }
 
-  async fetchNews() {
-    const articleData = await fetchAllArticles(this.state.formQuery);
-    console.log(articleData);
+  async fetchTopicsNews() {
+    const topicArticleData = await fetchTopicsArticles(this.state.formQuery);
+    //console.log(topicArticleData);
     this.setState({
-      articleData: articleData,
+      topicArticleData: topicArticleData,
       formQuery: ""
+    });
+  }
+  async fetchTopLiveNews() {
+    const articleData = await fetchTopUSArticles();
+    //console.log(articleData);
+    this.setState({
+      usLiveArticleData: articleData
     });
   }
 
   async componentDidMount() {
-    this.fetchNews();
+    await this.fetchTopicsNews();
+    await this.fetchTopLiveNews();
   }
   render() {
     return (
       <div className="App">
-        <Header lastQuery={this.state.lastQuery} />
-        <Form
-          formQuery={this.state.formQuery}
-          onChange={this.handleChange}
-          onSubmit={this.handleSubmit}
-        />
-        <div className="all-articles">
-          <ArticleList articleData={this.state.articleData} />
-        </div>
+        <nav>
+          <Link to="/">Welcome</Link>
+          <Link to="/top-news">Top News</Link>
+          <Link to="/all-news">Search </Link>
+        </nav>
+        <main>
+          <Route
+            exact
+            path="/"
+            render={() => <Welcome lastQuery="mikayda's" />}
+          />
+          <Route
+            path="/top-news"
+            render={props => (
+              <TopNewsArticles
+                {...props}
+                usLiveArticleData={this.state.usLiveArticleData}
+              />
+            )}
+          />
+          <Route
+            path="/all-news"
+            render={props => (
+              <EverythingArticles
+                {...props}
+                lastQuery={this.state.lastQuery}
+                topicArticleData={this.state.topicArticleData}
+                formQuery={this.state.formQuery}
+                handleChange={this.handleChange}
+                handleSubmit={this.handleSubmit}
+              />
+            )}
+          />
+        </main>
       </div>
     );
   }

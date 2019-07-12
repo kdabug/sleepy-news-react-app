@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 class Form extends Component {
   render() {
+    const { formQuery, onSubmit, onChange } = this.props;
     return (
       <div>
         <form className="form">
@@ -12,10 +13,10 @@ class Form extends Component {
             type="text"
             name="formQuery"
             id="formQuery"
-            value={this.props.formQuery}
-            onChange={this.props.onChange}
+            value={formQuery}
+            onChange={onChange}
           />
-          <input type="submit" onClick={this.props.onSubmit} />
+          <input type="submit" onClick={onSubmit} />
         </form>
       </div>
     );
