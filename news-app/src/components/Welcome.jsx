@@ -14,7 +14,7 @@ const Welcome = props => {
           className="welcome-button"
           onClick={() => props.history.push("/top-news")}
         >
-          top Us
+          top US
         </button>
         <button
           className="welcome-button"
