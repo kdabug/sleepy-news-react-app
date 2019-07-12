@@ -43,16 +43,6 @@ nav a:hover {
   margin: auto;
 }
 
-.cicada {
-  background-image: url("./assets/cicada-48135_960_720.png");
-  width: auto;
-  height: 120px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  padding: 15px;
-  margin: 15px;
-}
-
 .welcome-container {
   display: flex;
   flex-direction: column;
@@ -78,7 +68,39 @@ nav a:hover {
   transform: scale(0.95);
   transition: transform 0.2s;
 }
+.cicada {
+  background-image: url("./assets/cicada-48135_960_720.png");
+  width: 250px;
+  height: 120px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  padding: 15px;
+  margin: 15px;
+  animation: fly 4s infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
 
+@keyframes fly {
+  0% {
+    left: 20vw;
+    top: 50px;
+    transform: rotate(0deg);
+  }
+
+  50% {
+    left: 40vw;
+    top: 30px;
+    transform: rotate(180deg);
+  }
+
+  100% {
+    left: 60vw;
+    top: 50px;
+    transform: rotate(360deg);
+  }
+}
 .form {
   text-align: center;
   display: block;
