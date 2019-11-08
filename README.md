@@ -3,7 +3,7 @@
 
 This app follows the following lab (an example of a lesson I helped create, edit, and deliver to software engineering students).
 
-In order to run the app, change directories into the news-app and run `npm i` to install all dependencies. Make sure to follow the steps for getting an API key and putting that key in a `.env` file. Run `npm run start`.
+In order to run the app, run `npm i` to install all dependencies. Make sure to follow the steps for getting an API key and putting that key in a `.env` file. Run `npm run start`.
 
 #### React, React-Router, and the News, together at last!
 
