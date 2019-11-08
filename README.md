@@ -3,7 +3,7 @@
 
 #### React, React-Router, and the News, together at last!
 
-This app follows the following lab:
+This app follows the following lab (an example of a lesson I helped create, edit, and deliver to software engineering students):
 
 ## Getting Started with React:
 - Fork and Clone this repo then `cd` into the repo name.
