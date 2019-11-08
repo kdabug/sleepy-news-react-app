@@ -1,19 +1,16 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)  SOFTWARE ENGINEERING IMMERSIVE
 
 # React-Router and the News API
 
 #### React, React-Router, and the News, together at last!
 
-.
-
-![](https://res.cloudinary.com/jkarlin929/image/upload/v1550694937/ScreenshotNews_p8j2ul.png)
+This app follows the following lab:
 
 ## Getting Started with React:
 - Fork and Clone this repo then `cd` into the repo name.
 - Run `create-react-app news-app` and `cd` into the `news-app`.
 - Make sure that your react app has `react router` installed.
 - Run `npm start`.
-- Remove or delete the pre-loaded `create-react-app` stuff that comes with it (`logo.svg, app.test.js, serviceWorker`, the code in `App.css`). _This step is mandatory_.
+- Remove or delete the pre-loaded `create-react-app` stuff that comes with it (`logo.svg, app.test.js, serviceWorker`, the code in `App.css`). 
 
 ## React-Router:
 - We're building this app first with the provided data in [`/data/article-data.json`](/data/article-data.json).
