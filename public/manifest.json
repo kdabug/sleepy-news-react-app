@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Sleepy News",
+  "name": "Check for recent news based on topic - a simple react app",
   "icons": [
     {
       "src": "favicon.ico",

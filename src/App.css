@@ -2,7 +2,7 @@ body {
   font-family: "Rajdhani", sans-serif;
   background-color: #db97ac;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
 }
 main {
   display: flex;
@@ -37,7 +37,7 @@ nav a:hover {
   justify-content: center;
   font-size: 40px;
   background-color: #b8637d;
-  height: 30vh;
+  height: auto;
 }
 .header h1 {
   margin: auto;
@@ -70,8 +70,8 @@ nav a:hover {
 }
 .cicada {
   background-image: url("./assets/cicada-48135_960_720.png");
-  width: 250px;
-  height: 120px;
+  width: 30vw;
+  height: 20vh;
   background-repeat: no-repeat;
   background-size: contain;
   position: relative;
@@ -90,25 +90,24 @@ nav a:hover {
   }
 
   50% {
-    left: 40vw;
+    left: 35vw;
     top: 30px;
     transform: rotate(180deg);
   }
 
   100% {
-    left: 60vw;
+    left: 50vw;
     top: 50px;
     transform: rotate(360deg);
   }
 }
-.form {
+form {
   text-align: center;
   display: block;
   align-content: center;
   justify-content: center;
   background-color: #b8637d;
   padding: 20px;
-  width: 100%;
   color: #3b0012;
   font-size: 20px;
   font-weight: bold;
@@ -116,7 +115,7 @@ nav a:hover {
 .article {
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: auto;
   padding: 10px;
   height: auto;
   background-color: #963855;
@@ -139,10 +138,10 @@ nav a:hover {
 }
 
 .body-article {
-  width: 30%;
   display: grid;
   grid-template-columns: 40% 60%;
-  width: 100vw;
+  width: 100%;
+  border-radius: 15px;
 }
 
 .article-text {
@@ -151,6 +150,7 @@ nav a:hover {
   margin: 10px;
   text-align: left;
   color: #f6e3e9;
+  border-radius: 15px;
 }
 
 .article-text a {
@@ -164,7 +164,23 @@ nav a:hover {
   width: 95%;
   height: auto;
   margin: auto;
-  border-radius: 10%;
+  border-radius: 15px;
+}
+
+input {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.submit {
+  margin: 10px;
+}
+.submit:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 @media all and (max-width: 560px) {

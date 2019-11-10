@@ -16,7 +16,7 @@ class Form extends Component {
             value={formQuery}
             onChange={onChange}
           />
-          <input type="submit" onClick={onSubmit} />
+          <input type="submit" className="submit" onClick={onSubmit} />
         </form>
       </div>
     );
